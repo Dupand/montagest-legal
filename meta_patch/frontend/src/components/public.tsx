@@ -1,5 +1,0 @@
-import{useSystemSettings}from'../systemSettings'
-
-export function PublicHeader({showLogin=true}:{showLogin?:boolean}){const{settings}=useSystemSettings(),name=settings?.company_display_name||'MontaGest';return <header className="public-header"><a className="brand" href="/" aria-label={`${name} — página inicial`}><span aria-hidden="true">M</span>{name}</a><nav aria-label="Navegação pública"><a href="/">Início</a>{showLogin&&<a href="/login">Entrar</a>}</nav></header>}
-export function PublicLegalLinks(){return <nav className="public-legal-links" aria-label="Privacidade e dados"><a href="/privacy-policy.html">Política de Privacidade</a><span aria-hidden="true">·</span><a href="/data-deletion.html">Exclusão de dados</a></nav>}
-export function PublicSupportBlock(){const{settings}=useSystemSettings(),message=settings?.customer_help_message||'Entre em contato com nossa equipe se precisar de ajuda.';return <aside className="public-support" aria-label="Ajuda e suporte"><p>{message}</p>{settings?.support_phone&&<a href={`tel:${settings.support_phone}`}>Suporte: {settings.support_phone}</a>}</aside>}
